@@ -58,11 +58,11 @@ kramdown:
 
 
 
-# # Disqus settings
-# disqus_username: mwei
+# Disqus settings
+disqus_username: disqus_KJKSurWSbT
 
-# # Netease settings
-# netease_comment: false
+# Netease settings
+netease_comment: false
 
 
 
