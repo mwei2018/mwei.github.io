@@ -13,10 +13,10 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     mwei
-zhihu_username:     mwei
-github_username:    mwei
-twitter_username:   mwei
+weibo_username:     wybztn@hotmail.com
+zhihu_username:     wybztn@hotmail.com
+github_username:    mwei2018
+twitter_username:   wybztn@hotmail.com
 #facebook_username:  huxpro
 #linkedin_username:  firstname-lastname-idxxxx
 
