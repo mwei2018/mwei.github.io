@@ -4,7 +4,7 @@ title:      "Hello 2019"
 subtitle:   " \"不忘初心\""
 date:       2019/7/9
 author:     "Mason"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/beverage.jpg"
 catalog: true
 tags:
     - 生活
