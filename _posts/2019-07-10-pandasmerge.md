@@ -64,7 +64,6 @@ tags:
 ```
 df_one有5行，df_two有6行，join之前结果为11行,结果table如下：
 
-结果table如下：
 |  | age | first_name |user_id|last_name|
 | :-----| ----: | :----: |:-----|:-----|
 |0   |<font color=red>NaN</font>    |  warren | 1   |     ke
