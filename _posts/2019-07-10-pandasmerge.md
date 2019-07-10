@@ -58,19 +58,21 @@ tags:
  ```
 
 > join之后取最多列，数据row方向（按照行堆砌）合并
+
 ```py
  >>> df_new_row = pd.concat([df_one, df_two], sort=True)
  >>> print(df_new_row)
 ```
+
 df_one有5行，df_two有6行，join之前结果为11行,结果table如下：
 
 |  | age | first_name |user_id|last_name|
 | :-----| ----: | :----: |:-----|:-----|
-|0   |<font color=red>NaN</font>    |  warren | 1   |     ke
-|1   |<font color=red>NaN</font>    |   clyde | 2   |    gao
-|2   |<font color=red>NaN</font>    |  Allen  | 3   |    Ali
-|3   |<font color=red>NaN</font>    |   Alice | 4   |    li
-|4   |<font color=red>NaN</font>    |  Ayoung | 5   |   wang
+|0   |NaN   |  warren | 1   |     ke
+|1   |NaN   |   clyde | 2   |    gao
+|2   |NaN   |  Allen  | 3   |    Ali
+|3   |NaN   |   Alice | 4   |    li
+|4   |NaN   |  Ayoung | 5   |   wang
 |0  |25.0   |  Billy  | 4   |    liu
 |1  |26.0   |  Brian  | 5   |  Black
 |2  |27.0   |  Bran   | 6   |     li
@@ -94,7 +96,7 @@ df_one有5行，df_two有6行，join之前结果为6行，同列名也是重复�
 2  |  3   |   Allen   |    Ali  |6   |    Bran   |     li   |27|
 3  |  4   |   Alice   |     li  |7   |   Bryce   |  Brice   |28|
 4  |  5   |  Ayoung   |   wang  |8   |   Betty   |    wei   |30|
-5  |<font color=red>NaN</font>   |     <font color=red>NaN</font>    |    <font color=red>NaN</font>   |9   |   mason    |   wei   |31|
+5  |NaN   |     NaN    |    NaN   |9   |   mason    |   wei   |31|
 
 
 > 根据主键user_id进行关联merg
@@ -106,12 +108,12 @@ df_one有5行，df_two有6行，join之前结果为6行，同列名也是重复�
 
 |  |  age |first_name| last_name |user_id | score|
 | :-----| ----: | :----: |:-----|:-----|:-----|
-| 0|   <font color=red>NaN</font> |     warren|        ke|       1|     51|
-| 1|   <font color=red>NaN</font> |      clyde|       gao|       2|     15|
-| 2|   <font color=red>NaN</font> |      Allen|       Ali|       3|     15|
-| 3|   <font color=red>NaN</font> |      Alice|        li|       4|     61|
+| 0|   NaN |     warren|        ke|       1|     51|
+| 1|   NaN |      clyde|       gao|       2|     15|
+| 2|   NaN |      Allen|       Ali|       3|     15|
+| 3|   NaN |      Alice|        li|       4|     61|
 | 4|  25.0|      Billy|       liu|       4|     61|
-| 5|   <font color=red>NaN</font> |     Ayoung|      wang|       5|     16|
+| 5|   NaN |     Ayoung|      wang|       5|     16|
 | 6|  26.0|      Brian|     Black|       5|     16|
 | 7|  28.0|      Bryce|     Brice|       7|     14|
 | 8|  30.0|      Betty|       wei|       8|     15|
@@ -126,20 +128,20 @@ print(df_merge_outer)
 
 注意列名的变化，个人感觉这个场景使用比较少,结果视图如下：
 
-
 |  |user_id |first_name_x| last_name_x |first_name_y| last_name_y |  age|
 | :-----| ----: | :----: |:-----|:-----|:-----|:-----|
-|0     | 1    |   warren     |    ke    |       <font color=red>NaN</font>    |      <font color=red>NaN</font> |   <font color=red>NaN</font>|
-|1     | 2    |    clyde     |   gao    |       <font color=red>NaN</font>    |      <font color=red>NaN</font> |   <font color=red>NaN</font>|
-|2     | 3    |    Allen     |   Ali    |       <font color=red>NaN</font>    |      <font color=red>NaN</font> |   <font color=red>NaN</font>|
+|0     | 1    |   warren     |    ke    |       NaN    |      NaN |   NaN|
+|1     | 2    |    clyde     |   gao    |       NaN    |      NaN |   NaN|
+|2     | 3    |    Allen     |   Ali    |       NaN    |      NaN |   NaN|
 |3     | 4    |    Alice     |    li    |    Billy    |     liu | 25.0|
 |4     | 5    |   Ayoung     |  wang    |    Brian    |   Black | 26.0|
-|5     | 6    |       <font color=red>NaN</font>     |    <font color=red>NaN</font>    |     Bran    |      li | 27.0|
-|6     | 7    |       <font color=red>NaN</font>     |    <font color=red>NaN</font>    |    Bryce    |   Brice | 28.0|
-|7     | 8    |       <font color=red>NaN</font>     |    <font color=red>NaN</font>    |    Betty    |     wei | 30.0|
-|8     | 9    |       <font color=red>NaN</font>     |    <font color=red>NaN</font>    |    mason    |     wei | 31.0|
+|5     | 6    |       NaN     |    NaN    |     Bran    |      li | 27.0|
+|6     | 7    |       NaN     |    NaN    |    Bryce    |   Brice | 28.0|
+|7     | 8    |       NaN     |    NaN    |    Betty    |     wei | 30.0|
+|8     | 9    |       NaN     |    NaN    |    mason    |     wei | 31.0|
 
 > 根据主键user_id进行关联然后 inner  join
+
 ```py
  df_merge_inner = pd.merge(df_one, df_two, on="user_id", how="inner")
  print(df_merge_inner)
@@ -152,21 +154,21 @@ print(df_merge_outer)
 |0     |  4    |   Alice    |      li    |    Billy    |     liu   |25|
 |1     |  5    |  Ayoung    |    wang    |    Brian    |   Black   |26|
 
-
 > 根据主键user_id进行关联然后 left/right join
+
 ```py
  df_merge_left = pd.merge(df_one, df_two, on="user_id", how="left"，suffixes=("_left", "_right"))
  print(df_merge_left)
 ```
+
 left/right 两者基本写法一致，我就偷个懒。除了join之外请注意重复列的设置别名
 
 |  |user_id |first_name_left| last_name_left |first_name_right| last_name_right |  age|
 | :-----| ----: | :----: |:-----|:-----|:-----|:-----|
-|0   |   1    |   warren     |     ke    |     <font color=red>NaN</font>   |     <font color=red>NaN</font>|   <font color=red>NaN</font>|
-|1   |   2    |    clyde     |    gao    |     <font color=red>NaN</font>   |     <font color=red>NaN</font>|   <font color=red>NaN</font>|
-|2   |   3    |    Allen     |    Ali    |     <font color=red>NaN</font>   |     <font color=red>NaN</font>|   <font color=red>NaN</font>|
+|0   |   1    |   warren     |     ke    |     NaN   |     NaN|   NaN|
+|1   |   2    |    clyde     |    gao    |     NaN   |     NaN|   NaN|
+|2   |   3    |    Allen     |    Ali    |     NaN   |     NaN|   NaN|
 |3   |   4    |    Alice     |     li    |   Billy   |     liu|  25.0|
 |4   |   5    |   Ayoung     |   wang    |   Brian   |   Black|  26.0|
-
 
 数据合并就整理这么多
