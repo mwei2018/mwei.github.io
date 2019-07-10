@@ -69,7 +69,16 @@ df_one View：
 |3    |   4   |   Alice   |    li|
 |4    |   5   |  Ayoung   |  wang|
 
+df_two View：
 
+| | user_id| first_name |last_name | age|
+| :-----| ----: | :----: |:-----|:-----|
+|0    |   4 |    Billy |      liu|  25|
+|1    |   5 |    Brian |    Black|  26|
+|2    |   6 |     Bran |       li|  27|
+|3    |   7 |    Bryce |    Brice|  28|
+|4    |   8 |    Betty |      wei|  30|
+|5    |   9 |    mason |      wei|  31|
 
 df_third View：
 
