@@ -18,7 +18,7 @@ tags:
 这次参加群里的实战，利用pandas 进行股票数据清洗与分析，中间遇到太多场景
 
 - 两个Dataframe的合并，类似数据库两个表join，有一列主键key作为关联的唯一性
-- 利用Pandas给折线图产生一个特点区间的按月横坐标
+- 利用Pandas给折线图产生一个特定区间的按月横坐标
 - 按照Dataframe中日期列分组统计
 
 根据这些遇到的场景，利用Google在对每一个进行深入的学习并归纳：
@@ -56,6 +56,35 @@ tags:
  df_third = pd.DataFrame(raw_data3, columns=["user_id", "score"])
 
  ```
+
+3个DataFrame的数据结构如下：
+
+df_one View：
+
+ ||user_id| first_name| last_name|
+ | :-----| ----: | :----: |:-----|
+|0    |   1   |  warren   |    ke|
+|1    |   2   |   clyde   |   gao|
+|2    |   3   |   Allen   |   Ali|
+|3    |   4   |   Alice   |    li|
+|4    |   5   |  Ayoung   |  wang|
+
+
+
+df_third View：
+
+| | user_id | score|
+| :-----| ----: | :----: |
+|0     | 1   |  51|
+|1     | 2   |  15|
+|2     | 3   |  15|
+|3     | 4   |  61|
+|4     | 5   |  16|
+|5     | 7   |  14|
+|6     | 8   |  15|
+|7     | 9   |   1|
+|8     |10   |  61|
+|9     |11   |  16|
 
 > join之后取最多列，数据row方向（按照行堆砌）合并
 
