@@ -23,10 +23,11 @@ tags:
 
 根据这些遇到的场景，利用Google在对每一个进行深入的学习并归纳：
 
+
 ### 本次主要整理Dataframe的合并 
 <br>
-
-### Join And Merge 
+如果你熟悉sql，这些概念理解会更容易，这些函数本质上都是以特定方式组合成新的Dataframe
+### Concat, Join And Merge 
 
 1. 准备数据,准备数据我特意让Dataframe不一样多，这样能更接近一些特殊场景
 
@@ -95,11 +96,11 @@ df_third View：
 |8     |10   |  61|
 |9     |11   |  16|
 
-> join之后取最多列，数据row方向（按照行堆砌）合并
+> Concat之后取最多列，数据row方向（按照行堆砌）合并
 
 ```py
- >>> df_new_row = pd.concat([df_one, df_two], sort=True)
- >>> print(df_new_row)
+  df_new_row = pd.concat([df_one, df_two], sort=True)
+  print(df_new_row)
 ```
 
 df_one有5行，df_two有6行，join之前结果为11行,结果table如下：
@@ -118,7 +119,7 @@ df_one有5行，df_two有6行，join之前结果为11行,结果table如下：
 |4  |30.0   |  Betty  | 8   |    wei
 |5  |31.0   |  mason  | 9   |    wei
 
-> join之后取最多列，数据col方向取最多行合并,行数取最多df数据行
+> Concat之后取最多列，数据col方向取最多行合并,行数取最多df数据行
 
 ```py
  df_new_col = pd.concat([df_one, df_two], axis=1)
@@ -136,11 +137,11 @@ df_one有5行，df_two有6行，join之前结果为6行，同列名也是重复�
 4  |  5   |  Ayoung   |   wang  |8   |   Betty   |    wei   |30|
 5  |NaN   |     NaN    |    NaN   |9   |   mason    |   wei   |31|
 
-
-> 根据主键user_id进行关联merg
+Merge 是将多个df合并并指定主键（Key）相同的行
+> 根据主键user_id进行关联Merge
 
 ```py
- df_merge = pd.merge(df_new, df_third, on="user_id")
+ df_merge = pd.merge(df_new_row, df_third, on="user_id")
  print(df_merge)
 ```
 
