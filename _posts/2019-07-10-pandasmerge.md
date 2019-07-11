@@ -20,6 +20,9 @@ tags:
 - 两个Dataframe的合并，类似数据库两个表join，有一列主键key作为关联的唯一性
 - 利用Pandas给折线图产生一个特定区间的按月横坐标
 - 按照Dataframe中日期列分组统计
+- 新增列和修改列的数据类型
+- 重置索引
+- DataFrame的多种取数据方式
 
 根据这些遇到的场景，利用Google在对每一个进行深入的学习并归纳：
 
@@ -210,4 +213,4 @@ left/right 两者基本写法一致，我就偷个懒。除了join之外请注�
 |3   |   4    |    Alice     |     li    |   Billy   |     liu|  25.0|
 |4   |   5    |   Ayoung     |   wang    |   Brian   |   Black|  26.0|
 
-数据合并就整理这么多
+DataFrame的合并就整理这么多，下面将整理下列的相关操作
