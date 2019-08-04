@@ -1,14 +1,13 @@
 {
-    "name": "hux-blog",
-    "title": "Hux Blog",
-    "author": "Hux <huxpro@gmail.com>",
-    "version": "1.7.0",
-    "homepage": "http://huxpro.github.io",
+    "name": "mason-blog",
+    "title": "Mason wei",
+    "author": "Mason <wybztn@hotmail.com>",
+    "version": "1.0.0",
+    "homepage": "https://mwei2018.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Huxpro/huxpro.github.io"
-    },
-    "bugs": "https://github.com/Huxpro/huxpro.github.io/issues",
+        "url": "https://github.com/mwei2018"
+    },   
     "devDependencies": {
         "grunt": "~0.4.5",
         "grunt-contrib-less": "~0.11.4",
